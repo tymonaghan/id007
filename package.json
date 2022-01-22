@@ -4,8 +4,10 @@
   "description": "a reference app for the eon james bond 007 films",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack -w & nodemon start.js"
+    "start": "node start.js",
+    "start:dev": "webpack -w & nodemon start.js"
   },
   "author": "tyler monaghan",
   "license": "ISC",
@@ -17,11 +19,8 @@
     "react": "^17.0.2",
     "react-bootstrap": "^2.1.1",
     "react-dom": "^17.0.2",
-    "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
-    "redux": "^4.1.2",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.4.1"
+    "redux-logger": "^3.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.16.10",
