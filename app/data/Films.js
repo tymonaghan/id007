@@ -15,7 +15,7 @@ const ohmss = new Film(6, "On Her Majesty's Secret Service", 1969, 2);
 const liveandletdie = new Film(8, 'Live and Let Die', 1973, 3);
 const moonraker = new Film(11, 'Moonraker', 1979, 3);
 
-const thelivingdaylights = new Film(15, 'Moonraker', 1987, 4);
+const thelivingdaylights = new Film(15, 'The Living Daylights', 1987, 4);
 const licencetokill = new Film(16, 'Licence to Kill', 1989, 4);
 
 const goldeneye = new Film(17, 'GoldenEye', 1995, 5);
