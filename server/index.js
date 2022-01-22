@@ -19,7 +19,7 @@ app.get('/', (req, res) =>
 );
 // ^ this HAS TO GO BEFORE app.use(staticMiddleware)
 
-const staticMiddleWare = express.static(path.join(__dirname, '../public'));
+const staticMiddleWare = express.static(path.join(__dirname, '..', '/public'));
 app.use(staticMiddleWare);
 
 // 404

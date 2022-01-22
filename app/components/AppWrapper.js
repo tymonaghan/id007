@@ -5,7 +5,7 @@ import Stack from 'react-bootstrap/Stack';
 import Image from 'react-bootstrap/Image';
 import Nav from 'react-bootstrap/Nav';
 import { Outlet, Routes, Route, Link } from 'react-router-dom';
-import { Home, Films, Actors } from '.';
+import { Home, Films, Actors, SingleFilm } from '.';
 
 const AppWrapper = () => {
   return (
@@ -34,6 +34,7 @@ const AppWrapper = () => {
         <Route path="/" element={<Home />} />
         <Route path="/films" element={<Films />} />
         <Route path="/actors" element={<Actors />} />
+        <Route path="/films/:filmId" element={<SingleFilm />} />
       </Routes>
     </div>
   );

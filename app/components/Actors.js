@@ -7,6 +7,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Stack from 'react-bootstrap/Stack';
 
+import { Link } from 'react-router-dom';
+
 import films from '../data/Films';
 import actors from '../data/Actors';
 
@@ -20,7 +22,7 @@ const Actors = () => {
           (film) => film.actorId === actor.id
         );
         return (
-          <Card key={key} className="my-3" style={{ maxHeight: '10rem' }}>
+          <Card key={key} className="my-3">
             <Stack direction="horizontal">
               {/* <Col className="ms-auto"> */}
               <Image
@@ -36,7 +38,9 @@ const Actors = () => {
                 <h3>Starred in:</h3>
                 <ul>
                   {thisActorsFilms.map((film, key) => (
-                    <li key={key}>{film.name}</li>
+                    <li key={key}>
+                      <Link to={`/films/${film.id}`}>{film.name}</Link>
+                    </li>
                   ))}
                 </ul>
               </Card.Body>

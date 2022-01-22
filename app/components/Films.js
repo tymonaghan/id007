@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
@@ -11,6 +12,7 @@ import films from '../data/Films';
 import actors from '../data/Actors';
 
 const Films = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <h1>Browse by Film</h1>
@@ -18,7 +20,14 @@ const Films = () => {
         console.dir(film);
         const actor = actors.find((actor) => actor.films.includes(film.id));
         return (
-          <Card key={key} className="my-3" style={{ maxHeight: '10rem' }}>
+          <Card
+            key={key}
+            className="my-3"
+            style={{ maxHeight: '10rem' }}
+            onClick={() => {
+              navigate(`/films/${film.id}`);
+            }}
+          >
             <Stack direction="horizontal">
               {/* <Col className="ms-auto"> */}
               <Image
