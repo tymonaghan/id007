@@ -11,11 +11,6 @@ function Home() {
     <Container>
       <Stack gap={3} sm="auto" className="m-5">
         <Row>
-          <Button disabled variant="primary">
-            Search
-          </Button>
-        </Row>
-        <Row>
           <Button
             variant="primary"
             onClick={() => {
@@ -33,6 +28,16 @@ function Home() {
             }}
           >
             Browse by Actor
+          </Button>
+        </Row>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <Row className="mt-auto">
+          <Button disabled variant="outline-secondary">
+            Search
           </Button>
         </Row>
       </Stack>
