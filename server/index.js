@@ -9,7 +9,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // http logging
-app.use(volleyball);
+if (process.env.DEPLOY) {
+  app.use(volleyball);
+}
 
 // static index/home and static middleware
 app.get('/', (req, res) =>
