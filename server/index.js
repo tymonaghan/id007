@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // http logging
-if (process.env.DEPLOY) {
+if (!process.env.DEPLOY) {
   app.use(volleyball);
 }
 
