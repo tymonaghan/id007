@@ -20,20 +20,6 @@ app.get('/', (req, res) =>
 const staticMiddleWare = express.static(path.join(__dirname, '../public'));
 app.use(staticMiddleWare);
 
-// index redirector for requests without an extension name
-app.use('*', (req, res) => {
-  //logging:
-  console.log(
-    `app.use(*) caught ${req.method} request to ${req.url}\nserving ${path.join(
-      __dirname,
-      '../public/index.html'
-    )}`
-  );
-  // console.dir(req.headers.authorization);
-  // end logging
-  res.sendFile(path.join(__dirname, '../index.html'));
-});
-
 // 404
 app.use((req, res, next) => {
   // catch any requests to stuff with a file extension and 404
@@ -48,6 +34,20 @@ app.use((req, res, next) => {
   } else {
     next();
   }
+});
+
+// index redirector for requests without an extension name
+app.use('*', (req, res) => {
+  //logging:
+  console.log(
+    `app.use(*) caught ${req.method} request to ${req.url}\nserving ${path.join(
+      __dirname,
+      '../public/index.html'
+    )}`
+  );
+  // console.dir(req.headers.authorization);
+  // end logging
+  res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 // 500 error handler/logger/we blew it-catcher
