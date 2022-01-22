@@ -1,23 +1,38 @@
 const express = require('express');
 const app = express();
-
-// http logging
 const volleyball = require('volleyball');
-app.use(volleyball);
-
-// static middleware
 const path = require('path');
-const staticMiddleWare = express.static(path.join(__dirname, './public'));
-app.use(staticMiddleWare);
+const bodyParser = require('body-parser');
 
 //body parsing middlewarez
-const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// http logging
+app.use(volleyball);
+
+// static index/home and static middleware
 app.get('/', (req, res) =>
   res.sendFile(path.join(__dirname, '..', 'public/index.html'))
 );
+// ^ this HAS TO GO BEFORE app.use(staticMiddleware)
+
+const staticMiddleWare = express.static(path.join(__dirname, '../public'));
+app.use(staticMiddleWare);
+
+// index redirector for requests without an extension name
+app.use('*', (req, res) => {
+  //logging:
+  console.log(
+    `app.use(*) caught ${req.method} request to ${req.url}\nserving ${path.join(
+      __dirname,
+      '../public/index.html'
+    )}`
+  );
+  // console.dir(req.headers.authorization);
+  // end logging
+  res.sendFile(path.join(__dirname, '../index.html'));
+});
 
 // 404
 app.use((req, res, next) => {
@@ -33,20 +48,6 @@ app.use((req, res, next) => {
   } else {
     next();
   }
-});
-
-// index redirector for requests without an extension name
-app.use('*', (req, res) => {
-  //logging:
-  console.log(
-    `app.use(*) caught ${req.method} request to ${req.url}\nserving ${path.join(
-      __dirname,
-      '../public/index.html'
-    )}`
-  );
-  // console.dir(req.headers.authorization);
-  // end logging
-  res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 // 500 error handler/logger/we blew it-catcher
