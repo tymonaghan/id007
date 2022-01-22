@@ -2,7 +2,7 @@
   "name": "id007",
   "version": "1.0.0",
   "description": "a reference app for the eon james bond 007 films",
-  "main": "index.js",
+  "main": "start.js",
   "scripts": {
     "build": "webpack",
     "test": "echo \"Error: no test specified\"",
