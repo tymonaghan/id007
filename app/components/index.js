@@ -1,5 +1,5 @@
 import AppWrapper from './AppWrapper';
 import Home from './Home';
 import Films from './Films';
-
-export { AppWrapper, Home, Films };
+import Actors from './Actors';
+export { AppWrapper, Home, Films, Actors };

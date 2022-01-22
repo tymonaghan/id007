@@ -9,9 +9,11 @@ function Home() {
   const navigate = useNavigate();
   return (
     <Container>
-      <Stack gap={3} sm="auto">
+      <Stack gap={3} sm="auto" className="m-5">
         <Row>
-          <Button variant="primary">Search</Button>
+          <Button disabled variant="primary">
+            Search
+          </Button>
         </Row>
         <Row>
           <Button
@@ -24,7 +26,14 @@ function Home() {
           </Button>
         </Row>
         <Row>
-          <Button variant="primary">Browse by Actor</Button>
+          <Button
+            variant="primary"
+            onClick={() => {
+              navigate(`/actors`);
+            }}
+          >
+            Browse by Actor
+          </Button>
         </Row>
       </Stack>
     </Container>

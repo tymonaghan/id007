@@ -1,27 +1,39 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import Stack from 'react-bootstrap/Stack';
+import Image from 'react-bootstrap/Image';
 import Nav from 'react-bootstrap/Nav';
-import { Outlet, Routes, Route } from 'react-router-dom';
-import { Home, Films } from '.';
+import { Outlet, Routes, Route, Link } from 'react-router-dom';
+import { Home, Films, Actors } from '.';
 
 const AppWrapper = () => {
   return (
     <div>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home" className="me-auto">
-            id007
+          <Navbar.Brand className="me-auto">
+            <Stack direction="horizontal">
+              <Image src={`favicon.ico`} />
+              <Link to="/">
+                <h1>id007</h1>
+              </Link>
+            </Stack>
           </Navbar.Brand>
           <Nav>
-            <Nav.Link href="#browse">Browse</Nav.Link>
-            <Nav.Link href="#search">Search</Nav.Link>
+            <Nav.Link disabled href="#browse">
+              Browse
+            </Nav.Link>
+            <Nav.Link disabled href="#search">
+              Search
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/films" element={<Films />} />
+        <Route path="/actors" element={<Actors />} />
       </Routes>
     </div>
   );
