@@ -1,3 +1,3 @@
-import Home from './Home';
+import AppWrapper from './AppWrapper';
 
-export { Home };
+export { AppWrapper };
