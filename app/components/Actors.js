@@ -22,7 +22,7 @@ const Actors = () => {
           (film) => film.actorId === actor.id
         );
         return (
-          <Card key={key} className="my-3">
+          <Card key={key} className="my-3" bg="light">
             <Stack direction="horizontal">
               {/* <Col className="ms-auto"> */}
               <Image

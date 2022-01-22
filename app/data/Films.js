@@ -18,7 +18,15 @@ class Film {
   }
 }
 
-const drno = new Film(1, 'Dr. No', 1962, 1);
+const drno = new Film(
+  1,
+  'Dr. No',
+  1962,
+  1,
+  'Dr. No was trying to disrupt satellite launches or something from an offshore platform.',
+  "Honey Ryder, the chick in the bikini with the knife singing 'underneath the mango tree' constantly",
+  "Quarrel was Bond's buddy who sailed Bond to Crab Key. Quarrel got killed by a flamethrower tank ('dragon')"
+);
 const fromrussiawithlove = new Film(2, 'From Russia With Love', 1963, 1);
 const goldfinger = new Film(3, 'Goldfinger', 1964, 1);
 const thunderball = new Film(4, 'Thunderball', 1965, 1);

@@ -32,7 +32,7 @@ const SingleFilm = () => {
       >
         {'<< Back to browse movies'}
       </Button>
-      <Card className="my-2">
+      <Card bg="light" text="dark" className="my-2">
         <Stack direction="horizontal">
           {/* <Col className="ms-auto"> */}
           <Image
@@ -52,6 +52,15 @@ const SingleFilm = () => {
               Starring <Link to="/actors">{currentActor.name}</Link>
               <br />
               <strong>{currentFilm.year}</strong>
+              <br />
+              <strong>villain: </strong>
+              {currentFilm.villain}
+              <br />
+              <strong>women: </strong>
+              {currentFilm.women}
+              <br />
+              <strong>other notes: </strong>
+              {currentFilm.notes}
             </Card.Text>
           </Card.Body>
           {/* </Col> */}

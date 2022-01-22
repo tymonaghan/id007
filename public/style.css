@@ -5,3 +5,14 @@
   color: rgb(255, 255, 255);
   text-decoration-line: none;
 }
+
+html,
+body,
+#root,
+#root > div {
+  height: 100%;
+}
+
+#root {
+  background-color: rgb(225, 240, 255);
+}
